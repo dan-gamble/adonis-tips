@@ -30,12 +30,12 @@ If you need for example fetch all data from users and joining with posts table, 
 ```javascript
 async all(){
 		const data = await User.query()
-					.select(Database.raw("row_number() OVER(ORDER BY namePost) AS NP"))	    					    .select("nameUser")
-					.select(Database.raw("GROUP_CONCAT(namePost) AS Listado"))
-					.join("posts", "users.id", "=", "posts.user_id")
-					.groupBy("nameUser")
-					.orderBy("NP")
-					.fetch()
+			  .select(Database.raw("row_number() OVER(ORDER BY namePost) AS NP"))	    				  .select("nameUser")
+			  .select(Database.raw("GROUP_CONCAT(namePost) AS Listado"))
+		      .join("posts", "users.id", "=", "posts.user_id")
+			  .groupBy("nameUser")
+			  .orderBy("NP")
+			  .fetch()
 		return data
 
 	}

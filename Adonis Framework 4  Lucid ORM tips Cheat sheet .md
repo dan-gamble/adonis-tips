@@ -64,3 +64,21 @@ async all(){
 
 
 
+**TIP FOUR**
+
+_______
+
+Even you can use a *callback* to add multiple **where** calusules in this way
+
+```javascript
+async all(){
+		const data = await User.query()
+		      .where(function(){
+		      	this.where('nameUser', 'alfa')
+		      		.orWhere('statusUser', '<>', 0)
+		      }).fetch()
+		return data
+
+	}
+```
+

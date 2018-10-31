@@ -12,9 +12,7 @@ If you need for example fetch all data but keep certaing column invisible, then 
 
 ```javascript
 async fetchData(){
-    const data = await User.query()
-    					   .setHidden(['created_at'])
-     					   .fetch()
+    const data = await User.query().setHidden(['created_at']).fetch()
     return data
 }
 ```
@@ -40,4 +38,29 @@ async all(){
 
 	}
 ```
+
+
+
+**TIP THREE**
+
+_______________
+
+You need to get all users and then count their posts, do this
+
+
+
+```javascript
+async all(){
+		const data = await User.query()
+		      .select(Database.raw("row_number() OVER(ORDER BY nameUser) AS NP"))
+			  .select("nameUser")
+			  .join("posts", "users.id", "=", "posts.user_id")
+			  .count('*')
+			  .groupBy('nameUser')
+		return data
+
+	}
+```
+
+
 

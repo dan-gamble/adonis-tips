@@ -62,10 +62,6 @@ Now inside the **users.edge** view print all data in this way
 
 
 ```javascript
-@unless(data)
-	<h2>No hay registros disponibles</h2>
-@else
-	<h1>Si existen registros</h1>
 	<table>
 		<tr>
 			<th>Nombre del Usuario</th>
@@ -82,7 +78,6 @@ Now inside the **users.edge** view print all data in this way
 			</tr>
 			@endeach
 	</table>
-@endunless
 
 ```
 

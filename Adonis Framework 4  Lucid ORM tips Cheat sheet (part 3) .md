@@ -1,3 +1,7 @@
+Adonis Framework 4 Cheat Sheet (Create new columns) **Part 3**
+
+Made with ❤️ by Alfredo Paz
+
 ADD A NEW COLUMN TO AN EXISTING TABLE.
 
 In this example we need to add a column named **features** after **email** on an existing table which contains data; drop all migrations **is not an option**
@@ -58,7 +62,7 @@ module.exports = AddFeaturesToUsersSchema
 
 
 
-As you can see the name of the table is not correct, so we need to cahnge this line:
+As you can see the name of the table is not correct, so we need to change this line:
 
 ```javascript
 this.table('add_features_to_users', (table) => {

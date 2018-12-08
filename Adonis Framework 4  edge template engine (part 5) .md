@@ -33,10 +33,8 @@ So we make a nice index method to send this data from it to a view; in this way
 
 ```javascript
 async index({ view }) {
-
-const data = [{"name": "alfredo"}, {"name": "jorge"}, {"name": "virk"}, {"name": "joshua"}]
-	return view.render("listado", {data: data})
-    
+  const data = [{"name": "alfredo"}, {"name": "jorge"}, {"name": "virk"}, {"name": "joshua"}]
+  return view.render("listado", {data: data})  
 }
 ```
 
